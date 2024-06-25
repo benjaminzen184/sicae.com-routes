@@ -1,0 +1,77 @@
+@use './vars/_text_vars' as *;
+@use './vars/_responsive_vars' as *;
+
+@mixin form {
+  .a-form {
+    display: grid;
+    gap: 15px;
+    width: 500px;
+    max-width: 95vw;
+    padding: 20px 15px;
+    border-radius: 7px;
+    border: 1px solid var(--a-secondary);
+    background-color: var(--b-white);
+
+    &__form {
+      display: grid;
+      gap: 20px;
+
+      &--notify {
+        display: flex;
+      }
+    }
+
+    &__container {
+      display: grid;
+      gap: 5px;
+
+      &--checkbox {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+
+      &--submit {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+
+    &__input {
+      width: 100%;
+      outline: 0;
+      padding: 5px;
+      border-radius: 3px;
+      font-size: 1em;
+      background-color: var(--b-white);
+      border: 1px solid var(--a-secondary);
+
+      &--notify {
+        color: var(--f-white);
+        background-color: transparent;
+        border-radius: 7px 0 0 7px;
+
+        &::placeholder {
+          color: lightgray;
+        }
+
+      }
+    }
+
+    &__checkbox {
+      font-size: 15px;
+      height: 20px;
+      width: 20px;
+      // position: relative;
+      // top: 4px;
+    }
+
+    &__submit {
+      margin-left: auto;
+    }
+  }
+}
+
+@mixin form--responsive {}

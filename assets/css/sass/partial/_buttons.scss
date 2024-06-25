@@ -1,0 +1,42 @@
+@use './vars/_text_vars' as *;
+@use './vars/_responsive_vars' as *;
+
+@mixin buttons {
+  .button {
+    &__primary {
+      cursor: pointer;
+      width: fit-content;
+      height: fit-content;
+      padding-block: 8px;
+      padding-inline: 20px;
+      border-radius: 5px;
+      color: var(--a-primary);
+      font-size: 1.1em;
+      border: 1px solid var(--a-primary);
+      background-color: transparent;
+      
+      &:hover {
+        color: var(--f-white);
+        background-color: var(--a-primary);
+      }
+
+      &--notify {
+        border-radius: 0 7px 7px 0;
+        border-left: 0;
+        color: var(--f-white);
+        border-color: var(--a-secondary);
+        padding-inline: 12px;
+
+        &:hover {
+          background-color: rgba(0,0,0, .2);
+        }
+      }
+    }
+
+    &--mln-auto {
+      margin-inline: auto;
+    }
+  }
+}
+
+@mixin buttons--responsive {}

@@ -1,0 +1,61 @@
+@use './vars/_text_vars' as *;
+@use './vars/_responsive_vars' as *;
+
+@mixin cards {
+  .a-cards {
+    display: grid;
+    gap: 30px;
+    &__header {
+      &--item {
+        display: grid;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--a-secondary);
+      }
+      
+      &--a-custom {
+        gap: 20px;
+        justify-items: center;
+      }
+    }
+
+    &__figure {}
+    
+    &__image {
+      max-width: 200px;
+      max-height: 200px;
+      border-radius: 50%;
+    }
+
+    &__body {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+
+      &--item {
+        display: grid;
+        gap: 10px;
+      }
+    }
+
+    &__item {
+      max-width: 350px;
+      padding: 20px;
+      display: grid;
+      gap: 30px;
+      border-radius: 7px;
+      border: 1px solid var(--a-secondary);
+    }
+
+    &__footer {
+      &--item {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@mixin cards--responsive {}

@@ -1,0 +1,16 @@
+@use './vars/_text_vars' as *;
+@use './vars/_responsive_vars' as *;
+
+@mixin footer {
+  .footer {
+    display: grid;
+    gap: 15px;
+    padding: 10px;
+
+    &__text {
+      text-align: center;
+    }
+  }
+}
+
+@mixin footer--responsive {}

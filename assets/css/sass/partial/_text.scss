@@ -1,0 +1,91 @@
+@use './vars/_text_vars' as *;
+@use './vars/_responsive_vars' as *;
+
+@mixin text {
+  .svg-inline--fa {
+    width: 1em;
+  }
+
+  .title {
+    
+    &__medium, &__large {
+      font-weight: 500;
+    }
+
+    &__large {
+      font-size: 2em;
+    }
+
+    &__medium {
+      font-size: 1.5em;
+    }
+
+    &__small {
+      font-size: 1.2em;
+    }
+    
+    &--primary {
+      color: var(--a-primary);
+    }
+
+    &--center {
+      text-align: center;
+    }
+  }
+
+  .text {
+    &__large {
+      font-size: 1.1em;
+    }
+
+    &__medium {}
+
+    &__small {
+      font-size: .9em;
+    }
+    
+    &__xsmall {
+      font-size: .7em;
+    }
+
+    
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
+
+    &--primary {
+      color: var(--a-primary);
+    }
+    
+    &--secondary {
+      color: var(--f-gray);
+    }
+    
+    &--light-gray {
+      color: var(--f-light-gray);
+    }
+
+    &--max-line-1,
+    &--max-line-2,
+    &--max-line-3,
+    &--max-line-4,
+    &--max-line-5 {
+      overflow: hidden;
+      height: fit-content;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
+
+    @for $i from 1 through 5 {
+      &--max-line-#{$i} {
+        -webkit-line-clamp: #{$i};
+      }
+    }
+  }
+}
+
+@mixin text--responsive {}

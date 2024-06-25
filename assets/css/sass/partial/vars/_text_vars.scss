@@ -1,0 +1,31 @@
+// Font 
+$import-font: false;
+$file-format: "ttf";
+$font-family: "Open Sans";
+
+@if $import-font == false {
+    $font-family: Raleway, sans-serif;
+}
+
+// Font sizes
+$h1_size--normal: 35px;
+
+$h2_size--normal: 25px;
+
+$subtitle_size--large: 30px;
+$subtitle_size--normal: 25px;
+$subtitle_size--small: 20px;
+
+$p__size--normal: 18px;
+
+$icon__size--large: 35px;
+$icon__size--normal: 30px;
+$icon__size--small: 25px;
+
+$btn__size--normal: 18px;
+
+// Width | Height
+$text_width: 500px;
+
+// Margin
+$b-margin: 100px;

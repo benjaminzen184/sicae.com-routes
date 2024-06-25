@@ -1,0 +1,88 @@
+@use './vars/_text_vars' as *;
+@use './vars/_responsive_vars' as *;
+
+@mixin reset {
+  @if $import-font == true {
+    $sizes: (
+      /* weight-name */       'Thin'
+      /* font-weight */       100,
+
+      /* weight-name */       'ExtraLight'
+      /* font-weight */       200,
+
+      /* weight-name */       'Light'
+      /* font-weight */       300,
+
+      /* weight-name */       'Regular'
+      /* font-weight */       400,
+
+      /* weight-name */       'Medium'
+      /* font-weight */       500,
+
+      /* weight-name */       'SemiBold'
+      /* font-weight */       600,
+
+      /* weight-name */       'Bold'
+      /* font-weight */       700,
+
+      /* weight-name */       'ExtraBold'
+      /* font-weight */       800,
+
+      /* weight-name */       'Black'
+      /* font-weight */       900,
+
+    );
+
+    @each $weight-name, $font-weight in $sizes {
+      @if $weight-name != '' {
+          @font-face{
+              font-display: swap;
+              font-family:$font-family;
+              font-weight:$font-weight;
+              font-style:normal;
+              src:url('../assets/font/' + $font-family + '-' + $weight-name + '.' + $file-format) format('truetype');
+          }
+      }
+    }
+  }
+    
+  :root {
+    --l-font: #444;
+
+    --a-primary: #4CAF50;
+    --b-primary: #ddd;
+    --c-primary: #ddd;
+    --d-primary: #ddd;
+
+    --a-secondary: #ddd;
+
+    --b-white: #fff;
+
+    --f-white: #fff;
+    --f-gray: #888;
+    --f-light-gray: #ddd;
+    
+    --menu-height: 52px;
+  }
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: $font-family;
+    }
+    
+  body {
+    color: var(--l-font);
+    font-size: 15px;
+  }
+
+  a {
+      text-decoration: none;
+      color: currentColor;
+  }
+  
+}
+
+@mixin reset--responsive {
+}

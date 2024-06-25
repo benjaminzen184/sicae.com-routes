@@ -1,0 +1,26 @@
+# Options +FollowSymlinks
+
+# Prevent Directoy listing
+Options -Indexes
+
+# Prevent Direct Access to files
+<FilesMatch "(?i)((\.tpl|\.ini|\.log|(?<!robots)\.txt))">
+ Order deny,allow
+ Deny from all
+</FilesMatch>
+
+RewriteEngine On
+
+RewriteBase /dev/sicae.com-routes/
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^localhost/dev/sicae.com-routes/$
+RewriteRule (.*) http://localhost/dev/sicae.com-routes/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|js|css)
+RewriteRule ^([^?]*) index.php?route=$1 [L,QSA]
+

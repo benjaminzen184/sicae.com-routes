@@ -1,0 +1,6 @@
+@use './vars/_text_vars' as *;
+@use './vars/_responsive_vars' as *;
+
+@mixin animation {}
+
+@mixin animation--responsive {}
